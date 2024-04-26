@@ -32,7 +32,7 @@ function App() {
 			result += characters.charAt(Math.floor(Math.random() * characters.length))
 			// result += '*'
 		}
-		handleVisiblePasswordClick(result)
+		// handleVisiblePasswordClick(result)
 		return result
 	}
 
@@ -49,19 +49,19 @@ function App() {
 		})
 	}
 
-	function handleVisiblePasswordClick(result) {
-		setHashPass(prevHashPass => !prevHashPass)
-		// setRandomPass(prevPass => {
-		// 	// for (let i = 1; i <= prevPass.length; i++) {
+	// function handleVisiblePasswordClick(result) {
+	// 	setHashPass(prevHashPass => !prevHashPass)
+	// 	// setRandomPass(prevPass => {
+	// 	// 	// for (let i = 1; i <= prevPass.length; i++) {
 
-		// 	// 	result += '*'
-		// 	// }
-		// 	// return result
-		// 	let passLetters = prevPass.split('')
-		// 	result = passLetters.replace(/[a-zA-Z]/g, "*")
-		// 	return result
-		// })
-	}
+	// 	// 	// 	result += '*'
+	// 	// 	// }
+	// 	// 	// return result
+	// 	// 	let passLetters = prevPass.split('')
+	// 	// 	result = passLetters.replace(/[a-zA-Z]/g, "*")
+	// 	// 	return result
+	// 	// })
+	// }
 
 	return (
 		<div className='card'>
@@ -107,7 +107,7 @@ function App() {
 					<strong>Twoje hasło:</strong>
 					<p>{randomPass}</p>
 					<div className='card__password-box__buttons'>
-						<button onClick={handleVisiblePasswordClick}>{hashPass ? 'Pokaż' : 'Ukryj'}</button>
+						<button onClick={() => setHashPass(prevHashPass => !prevHashPass)}>{hashPass ? 'Pokaż' : 'Ukryj'}</button>
 						<button>Kopiuj</button>
 					</div>
 				</div>
